@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+  <title>Cross-Browser QRCode generator for Javascript</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <script type="text/javascript" src="./../js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="./../js/qrcode.min.js"></script>
+</head>
+
+<body>
+  <img src="../images/cropped-logo_380.png" style="left: 50%;position:absolute;transform: translate(-50%, 0);
+    margin-right: -50%;margin-top:60px; width:200px" />
+
+  <div id="qrcode" style="position: absolute;
+    top: 125px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0) "></div>
+  <%= url %>
+    <div id="h"></div>
+    <script type="text/javascript">
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 200,
+        height: 200
+      });
+
+      function makeCode() {
+        var html = "";
+        for (var id in this.projects) {
+          html += "<h1>" + this.projects[id] + "</h1>";
+          html += '<div name="qr' + id + '"></div>';
+
+        }
+        $('<p>' + html + '</p>').appendTo('#h');
+        setTimeout(() => {
+          for (var id in this.projects) {
+            let qrcode = new QRCode(document.getElementById("qr" + id), {
+              width: 600,
+              height: 600
+            });
+            qrcode.makeCode("hoi");
+          }
+        }, 2000);
+
+
+
+        console.log(this.projects);
+      }
+
+      makeCode();
+
+    </script>
+
+    <div id="qrurl" style="position: absolute;
+    top: 350px;
+    left: 50%;
+    margin-right: -50%; font-size:20px;
+    transform: translate(-50%, 0) ">
+    </div>
+
+</body>

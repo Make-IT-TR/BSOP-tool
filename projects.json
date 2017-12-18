@@ -1,0 +1,198 @@
+{
+  "$schema": "./schema.json",
+  "events" : [
+    {
+    "title" : "demo"
+    }
+  ],
+  "categories": [{
+      "id": 1,
+      "title": "learn more",
+      "image": "info.png",
+      "color": "#4C7ABD"
+    }, {
+      "id": 2,
+      "title": "stay up-to-date",
+      "image": "follow2.png",
+      "color": "#4C7ABD"
+    },
+    {
+      "id": 3,
+      "title": "make similar",
+      "image": "tools.png",
+      "color": "#4C7ABD"
+    },
+    {
+      "id": 4,
+      "title": "design myself",
+      "image": "tools.png",
+      "color": "#4C7ABD"
+    },
+    {
+      "id": 5,
+      "title": "maker tools",
+      "image": "tools.png",
+      "color": "#4C7ABD"
+    },
+    {
+      "id": 6,
+      "title": "shop",
+      "image": "shop.png",
+       "color": "#4C7ABD"
+    },
+    {
+      "id": 7,
+      "title": "financially support",
+      "image": "finance.png",
+       "color": "#4C7ABD"
+    },
+    {
+      "id": 8,
+      "title": "contribute",
+      "image": "finance.png",
+       "color": "#4C7ABD"
+    },
+    {
+      "id": 9,
+      "title": "contact",
+      "image": "contact.png",
+       "color": "#4C7ABD"
+    }
+
+  ],
+  "platforms": [{
+      "id": 1,
+      "title": "Facebook",
+      "image": "facebook.png",
+      "description": "",
+      "url": "",
+      "categories": [1, 2]
+    },
+    {
+      "id": 2,
+      "title": "Youtube",
+      "image": "youtube.png",
+      "description": "",
+      "url": "",
+      "categories": [1]
+    },
+    {
+      "id": 3,
+      "title": "Google+",
+      "image": "googleplus.png",
+      "categories": [2]
+    },
+    {
+      "id": 4,
+      "title": "email",
+      "image": "email.png",
+      "categories": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "title": "website",
+      "image": "website.png",
+      "categories": [
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "title": "twitter",
+      "image": "twitter.png",
+      "categories": [
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "title": "fablabs.io",
+      "image": "fablabsio.png",
+      "categories": [4]
+    },
+    {
+      "id": 8,
+      "title": "website",
+      "image": "website.png",
+      "categories": [1, 2]
+    },
+    {
+      "id": 9,
+      "title": "instagram",
+      "image": "instagram.png",
+      "categories": [2]
+    },
+    {
+      "id": 10,
+      "title": "scan and make",
+      "image": "scanandmake.png",
+      "categories": [5]
+    },
+    {
+      "id": 11,
+      "title": "Betterplace",
+      "image": "betterplace.png",
+      "categories": [6
+
+      ]
+    },
+    {
+      "id": 12,
+      "title": "LinkedIn",
+      "image": "linkedin.png",
+      "categories": [
+        2
+      ]
+    },
+    {
+      "id": 13,
+      "title": "webshop",
+      "image": "webshop.png",
+      "categories": [
+        5
+      ]
+    },
+    {
+      "id": 14,
+      "title": "kickstarter",
+      "image": "kickstarter.png",
+      "categories": [
+        5
+      ]
+    },
+    {
+      "id" : 15,
+      "title":"etsy",
+      "image" : "etsy.png"
+    },
+    {
+      "id" : 16,
+      "title" : "thingiverse",
+      "image" : "thingiverse.png"
+    },
+    {
+      "id" : 17,
+      "title" : "github",
+      "image" : "github.png"
+    },
+    {
+      "id" : 18,
+      "title" : "pinterest",
+      "image" : "pinterest.png"
+    },
+    {
+      "id" : 19,
+      "title" : "google plus",
+      "key" : "plus.google",
+      "image" : "plus.png"
+    },
+    {
+      "id" : 20,
+      "title" : "wiki",
+      "image" : "wiki.png"
+    }
+  ],
+  "projects": [  ]
+}

@@ -1,0 +1,149 @@
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: @screen-sm-min) {
+  .card {
+    background: red;
+  }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: @screen-md-min) {
+  .card {
+    background: blue;
+  }
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: @screen-lg-min) {
+  .card {
+    background: yellow;
+    cursor: pointer;
+  }
+}
+
+.card {
+  background: green;
+  height: 150px;
+  padding: 0;
+}
+
+.category-image {
+  position: absolute;
+  width: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 10px;
+  opacity: .20;
+}
+
+.platform-image-small {
+  width: 25px;
+  margin: 2px;
+}
+
+.platform-link-medium {
+  float: left;
+  text-decoration: none;
+  border-bottom-style: none;
+}
+
+.buttons
+{
+  position:fixed;
+  right:10px;
+  top: 10px;
+}
+
+.more-button {
+
+}
+
+.like-button {
+
+}
+
+.platform-title-medium {
+  clear: both;
+  margin-top: -5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+}
+
+.footer-image {
+  width: 75px;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.footer-link {
+  text-decoration: none;
+  border-bottom-style: none;
+}
+
+.footer-images {
+  text-align: center;
+}
+
+.qr-footer-image {
+  width: 50px;
+  margin: 20px;
+}
+
+.prize-image {
+  float: left;
+  width: 50px;
+  margin: 5px;
+}
+
+.hideC {
+  background: red;
+}
+
+.platform-image-medium {
+  max-height: 40px;
+  margin: 5px;
+}
+
+.category-platforms {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+.category-title {
+  margin-top: 3.5em;
+  font-size: 20px;
+  transform: translate(0, -50%);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+.feedback-notification {
+  margin: 1em;
+  margin-top: 10px;
+  font-size: 16px;
+  position: relative;
+}
+
+.register-button {
+  float: left;
+  width: 75px;
+  padding: 5px;
+}
+
+.email-input {
+  width: 175px;
+  margin: 2px;
+  float: left;
+}

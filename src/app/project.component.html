@@ -1,0 +1,175 @@
+<div *ngIf="project">
+
+
+  <div id="fh5co-hero" style="padding-top: 1em">
+
+    <div class="overlay"></div>
+    <!--<div class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></div>-->
+    <!-- End fh5co-arrow -->
+    <div class="container">
+      <img src="images/cropped-logo_380.png" style="width:200px;margin-bottom:10px" />
+      <div class="col-md-12">
+        <div class="fh5co-hero-intro">
+          <h1 class="to-animate hero-animate-1">{{ project.title }}</h1>
+          <p *ngIf="showMore" class="to-animate hero-animate-3 project-subtitle">{{ project.subtitle }} </p>
+          <p *ngIf="showMore" class="project-subtitle">{{ project.description }}</p>
+          <div class="buttons">
+            <a *ngIf="showMore" class="btn btn-outline btn-md more-button" (click)="showMore=false">hide</a>
+            <a *ngIf="!showMore && project.description" class="btn btn-outline btn-md more-button" (click)="showMore=true"><i class="ti-info"></i></a>
+            <!--<a class="btn btn-outline btn-md" (click)="showShare=!showShare;share()"><i class="ti-sharethis"></i> share</a>-->
+            <!--<a class="btn btn-outline btn-md" (click)="showShare=!showShare;share()"> feedback</a>-->
+
+            <div *ngIf="!liked" style="position:absolute;right:0px"><a class="btn btn-outline btn-md like-button" (click)="likeProject()"><i class="ti-star"> like</i></a></div>
+            <div *ngIf="liked" style="position:absolute;right:0px"><a class="btn btn-outline btn-md like-button">thanks</a>
+
+            </div>
+          </div>
+          <!--<share-buttons *ngIf="showShare" [shareTitle]="'Share ' + project.title" [url]="project.shareUrl"></share-buttons> -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fh5co-main">
+
+    <div *ngIf="showLike">
+
+
+    </div>
+
+    <div class="fh5co-cards">
+      <div class="container-fluid">
+        <div class="row">
+          <div *ngFor='let c of categories'>
+            <div *ngIf='c._platforms' class="col-lg-3 col-md-4 col-sm-6 col-xs-6 card" [style.opacity]="c._opacity" [style.background]="c.color"
+              style="float:left">
+              <div *ngIf='c._more'>
+                <div *ngFor='let p of c._platforms'>
+                  <a href="follow/{{project.id}}/{{p.id}}" class="platform-link-medium">
+                    <img src="images/{{p._platform.image}}" class="platform-image-medium" />
+                    <div class="platform-title-medium">
+                      {{p._platform.title}}
+                    </div>
+
+                  </a>
+                </div>
+              </div>
+              <div *ngIf='!c._more' (click)="categorySelect(c)">
+                <div>
+                  <img src="images/{{c.image}}" class="img-responsive category-image" />
+                  <div class="category-title">
+                    {{c.title}}</div>
+                </div>
+                <div class="category-platforms">
+
+                  <img *ngFor='let p of c._platforms' src="images/{{p._platform.image}}" class="platform-image-small" />
+
+                </div>
+                <!--<p style="clear:both;margin:10px">{{c.description}}</p>-->
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div *ngIf='!emailSet' class="feedback-notification">
+        <img src='images/arduinostarterkit.png' class='prize-image' />Win a Arduino starter kit
+        <input [(ngModel)]="email" type="email" class="form-control email-input" id="email" name="email" placeholder="example@domain.com"
+        />
+        <button class="btn btn-primary register-button" (click)="save()">save</button>
+
+      </div>
+      <div class="footer-images">
+        <a class="footer-link" href="http://www.make-it.io"><img class="footer-image" src="images/makeit.png" /></a>
+
+        <a class="footer-link" href="poster/{{project.id}}"><img class="qr-footer-image" src="images/qr.png"></a>
+        <!--<a href="cards/{{project.id}}">print project cards</a>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="event">
+
+  <div id="fh5co-hero" style="padding-top: 1em">
+
+    <div class="overlay"></div>
+    <!--<div class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></div>-->
+    <!-- End fh5co-arrow -->
+    <div class="container">
+      <img src="images/cropped-logo_380.png" style="width:200px;margin-bottom:10px" />
+
+      <div class="col-md-12">
+        <div class="fh5co-hero-intro">
+          <h1 class="to-animate hero-animate-1">{{ event.title }}</h1>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fh5co-main">
+
+    <div class="fh5co-cards">
+      <div class="container-fluid">
+        <div class="row">
+          <div *ngFor="let p of projects">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="float:left;padding:5px">
+              <a href="/project/{{p.id}}">{{p.title}}</a>
+              <!--<p style="clear:both;margin:10px">{{c.description}}</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-images">
+        <a class="footer-link" href="http://www.make-it.io"><img class="footer-image" src="images/makeit.png" /></a>
+
+        <!--<a href="cards/{{project.id}}">print project cards</a>-->
+      </div>
+    </div>
+
+  </div>
+  </div>
+<div *ngIf="stats">
+
+  <div id="fh5co-hero" style="padding-top: 1em">
+
+    <div class="overlay"></div>
+    <!--<div class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></div>-->
+    <!-- End fh5co-arrow -->
+    <div class="container">
+      <img src="images/cropped-logo_380.png" style="width:200px;margin-bottom:10px" />
+
+      <div class="col-md-12">
+        <div class="fh5co-hero-intro">
+          <h1 class="to-animate hero-animate-1">{{ stats.title }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fh5co-main">
+
+    <div class="fh5co-cards">
+      <div class="container-fluid">
+        <div class="row">
+          <div *ngFor="let p of projects">
+            <div style="padding:5px">
+              <a href="/project/{{p.id}}">{{p.title}}</a> - {{p._likes}}
+              <!--<p style="clear:both;margin:10px">{{c.description}}</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-images">
+        <a class="footer-link" href="http://www.make-it.io"><img class="footer-image" src="images/makeit.png" /></a>
+
+        <!--<a href="cards/{{project.id}}">print project cards</a>-->
+      </div>
+    </div>
+
+  </div>
+
+</div>

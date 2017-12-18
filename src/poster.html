@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+  <title>Make-IT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <script type="text/javascript" src="./../js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="./../js/qrcode.min.js"></script>
+</head>
+
+<body>
+  <div style="position: absolute;
+    top: 125px;
+    left: 50%;
+    margin-right: -50%; font-size:30px; font-weight: 800;
+    transform: translate(-50%, 0) ">Learn more &#38; Win Arduino Kit</div>
+  <div style="left: 50%;position:absolute;transform: translate(-50%, 0);
+    margin-right: -50%;margin-top:60px"><img style="width:250px" src="../images/cropped-logo_380.png" />
+
+  </div>
+
+  <div id="projectname" style="position: absolute;
+    top: 745px;
+    left: 50%;
+    text-align: center;
+    margin-right: -50%; font-size:40px; font-weight: 800;
+    transform: translate(-50%, 0) "></div>
+  <div id="qrurl" style="position: absolute;
+    top: 860px;
+    left: 50%;
+    margin-right: -50%; font-size:40px;
+    transform: translate(-50%, 0) "></div>
+
+  <div id="qrcode" style="position: absolute;
+    top: 250px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0) "></div>
+  <%= url %>
+    <script type="text/javascript">
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 500,
+        height: 500
+      });
+
+      function makeCode() {
+
+        qrcode.makeCode(url);
+        console.log(link);
+        $('<p>' + link + '</p>').appendTo('#qrurl');
+        $('<p>' + projectname + "</p>").appendTo('#projectname');
+      }
+
+
+      makeCode();
+
+      $("#text").
+      on("blur", function () {
+        makeCode();
+      }).
+      on("keydown", function (e) {
+        if (e.keyCode == 13) {
+          makeCode();
+        }
+      });
+
+    </script>
+
+
+</body>
